@@ -5,11 +5,16 @@ body {
 }
 
 .jumbotron{
-    background-color: white;
+  background-color: white;
 }
 
 #player, #enemy {
   background-color: white;
+}
+
+img{
+
+
 }
 
 .footer{
