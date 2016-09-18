@@ -41,7 +41,13 @@ img{
 button{
   padding: 0;
   border: none;
-  background: none
+  background: none;
+}
+
+#restartGame{
+    float:right;
+    font-size: 24px;
+    padding-right: 50px;
 }
 
 .footer{

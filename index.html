@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Advanced RPS</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
@@ -36,20 +36,26 @@
                         <div class="col-md-6">
                             <div id="player">
                                 <div id="firstBox">
-                                <p>Player One</p>
-                                <button><img src="images/scissors.png" alt="scissors" style="width:128px;height:195px;"></button>
-
-                                <button><img src="images/rock.png" alt="rock" style="width:128px;height:195px;"></button>
-
-                                <button><img src="images/paper.png" alt="paper" style="width:128px;height:195px;"></button>
+                                    <p>Player One</p>
+                                    <class id="images">
+                                    <div id="scissors">
+                                        <button><img src="images/scissors.png" alt="scissors" id="image" style="width:128px;height:195px;"></button>
+                                    </div>
+                                    <div id="rock">
+                                        <button><img src="images/rock.png" alt="rock" id="image" style="width:128px;height:195px;"></button>
+                                    </div>
+                                    <div id="paper">
+                                        <button><img src="images/paper.png" alt="paper" id="image" style="width:128px;height:195px;"></button>
+                                    </div>
+                                    </class>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div id="enemy">
                                 <div id="secondBox">
-                                <p>Player Two</p>
-                                <img src="images/question2.png" alt="question-mark" style="width:120px;height:190px;">
+                                    <p>Player Two</p>
+                                    <img src="images/question2.png" alt="question-mark" style="width:120px;height:190px;">
                                 </div>
                             </div>
                         </div>
@@ -60,9 +66,13 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div id="score">
-                        <div><h3>Win: </h3><span id="win"></span></div>
-                        <div><h3>Loss: </h3><span id="loss"></span></div>
-                        <div><h3>Tie: </h3><span id="tie"></span></div>
+                            <div>
+                                <h3>Win: </h3><span id="win"> 0 </span></div>
+                            <div>
+                                <h3>Loss: </h3><span id="loss"> 0 </span></div>
+                            <div>
+                                <h3>Tie: </h3><span id="tie"> 0 </span></div>
+                                <button type="restartGame" id="restartGame">Restart Game</button>
                         </div>
                     </div>
                 </div>

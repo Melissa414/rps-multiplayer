@@ -1,5 +1,5 @@
 // Initialize Firebase
-  var config = {
+var config = {
     apiKey: "AIzaSyCZkh0DajG2-PJ_CKS1LZIPjuHY1okFV_g",
     authDomain: "rockpaperscissors-6404d.firebaseapp.com",
     databaseURL: "https://rockpaperscissors-6404d.firebaseio.com",
@@ -26,27 +26,25 @@ var score= 0;
   $(document).ready(function(){
 
 
+    $(".image").click(function() {
 
-  $("#player").click(function() {
-
-    $("#paper").appendTo("firstBox");
-    $("#rock, #scissors").hide("#firstBox");
+    $("#paper").append("#player");
+    $("rock, scissors").hide();
 
   });
 
-  $("#player").click(function() {
+  $(".image").click(function() {
 
-      $("#rock").appendTo("#firstBox");
-      $("#scissors, #paper").hide("#firstBox");
+      $("#rock").append("#player");
+      $("scissors, paper").hide();
   });
 
-  $("#player").click(function() {
+  $(".image").click(function() {
 
-      $("#scissors").appendTo("#firstBox");
-      $("#rock, #paper").hide("#firstBox");
+      $("#scissors").append("#player");
+      $("rock, paper").hide();
   });
 
-  $("button").click(function(){
 
     var rockIsPicked = function(){
 
@@ -82,22 +80,20 @@ var score= 0;
     };
 
 
-    $("score").on(function() {
-    $("#player").html("win");
-    $("#player").html("loss");
-    $("#player").html("tie");
+      var score = function() {
+      $("#player").html("win");
+      $("#player").html("loss");
+      $("#player").html("tie");
+    };
+
+    var restartGame = function(inputEndGame) {
+
+    var restart = $('<button>Restart</button>').click(function() {
+      location.reload();
     });
-
-    //get elements
-
-
-
-
-    // function(errorObject){
-    //   console.log("Errors handled: " + errorObject.code)
-    // };
-
-    return false;
-  });
+    var gameState = $("<div>").text(inputEndGame);
+      $("body").append(gameState);
+      $("body").append(restart);
+    };
 
 });
