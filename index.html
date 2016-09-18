@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Advanced RPS</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans|Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
 </head>
@@ -22,7 +23,7 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            explaination of the rules
+                            <h4>Pick the image you want to compete with, wait to see if you win against your opponent. Good Luck!</h4>
                         </div>
                     </div>
                 </div>
@@ -34,28 +35,34 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div id="player">
-                                <p>player side</p>
+                                <div id="firstBox">
+                                <p>Player One</p>
                                 <button><img src="images/scissors.png" alt="scissors" style="width:128px;height:195px;"></button>
 
                                 <button><img src="images/rock.png" alt="rock" style="width:128px;height:195px;"></button>
 
                                 <button><img src="images/paper.png" alt="paper" style="width:128px;height:195px;"></button>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div id="enemy">
-                                <p>enemy side</p>
-                                <img src="images/question2.png" alt="question-mark" style="width:128px;height:195px;">
+                                <div id="secondBox">
+                                <p>Player Two</p>
+                                <img src="images/question2.png" alt="question-mark" style="width:120px;height:190px;">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <br>
+                <br>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div id="score">
-                        <div><h3>Win: </h3> <span id="win"></span></div>
-                        <div><h3>Loss: </h3> <span id="loss"></span></div>
+                        <div><h3>Win: </h3><span id="win"></span></div>
+                        <div><h3>Loss: </h3><span id="loss"></span></div>
+                        <div><h3>Tie: </h3><span id="tie"></span></div>
                         </div>
                     </div>
                 </div>
@@ -64,12 +71,12 @@
         </div>
         <footer class="footer">
             <div class="container">
-                <p class="text-muted">Melissa Baldwin</p>
+                <p class="text-muted">Melissa Baldwin <span class="glyphicon glyphicon-copyright-mark"></span></p>
             </div>
         </footer>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="javascript/app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 </body>
 
 </html>
