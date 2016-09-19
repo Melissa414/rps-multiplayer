@@ -13,9 +13,9 @@ var database = firebase.database();
 var player;
 var enemey;
 
-var rock;
-var paper;
-var scissors;
+var rockIsPicked = rock;
+var paperIsPicked = paper;
+var scissorsIsPicked = scissors;
 
 var win = 0;
 var loss = 0;
@@ -25,27 +25,29 @@ var score= 0;
 
   $(document).ready(function(){
 
-
+  //when a specific image is clicked, the other two will disappear
     $(".image").click(function() {
 
     $("#paper").append("#player");
     $("rock, scissors").hide();
 
-  });
 
   $(".image").click(function() {
 
       $("#rock").append("#player");
       $("scissors, paper").hide();
-  });
+
 
   $(".image").click(function() {
 
       $("#scissors").append("#player");
       $("rock, paper").hide();
+
+    });
   });
 
-
+  //if/else if for when an image is picked,
+  //and adds a tie, loss, or win for any option chosen
     var rockIsPicked = function(){
 
       if (rock == rock){
@@ -77,14 +79,35 @@ var score= 0;
       }else if(scissors == paper){
         win++
       }
-    };
+    }; return false;
+
+  });
 
 
-      var score = function() {
-      $("#player").html("win");
-      $("#player").html("loss");
-      $("#player").html("tie");
-    };
+    $("#player").on("click", function() {
+
+      var scissors = $('#scissors').val().trim(); 
+      var rock = $('#rock').val().trim(); 
+      var paper = $('#paper').val().trim(); 
+
+      console.log(scissors)
+      console.log(rock)
+      console.log(paper)
+
+    $("#firstBox").empty();
+
+      // $("#firstBox").append("<h1>" + name);
+      // $("#firstBox").append("<h4>" + email);
+      // $("#firstBox").append("<h4>" + age);
+
+
+      localStorage.setItem("scissors", scissors);
+      localStorage.setItem("rock", rock);
+      localStorage.setItem("paper", paper);
+
+      return false;
+    });
+
 
     var restartGame = function(inputEndGame) {
 
