@@ -5,8 +5,8 @@ var config = {
     databaseURL: "https://rockpaperscissors-6404d.firebaseio.com",
     storageBucket: "",
     messagingSenderId: "770214253444"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
 var database = firebase.database();
 
@@ -20,103 +20,104 @@ var scissorsIsPicked = scissors;
 var win = 0;
 var loss = 0;
 var tie = 0;
-var score= 0;
+var score = 0;
 // console.log("ready to go")
 
-  $(document).ready(function(){
+$(document).ready(function() {
 
-  //when a specific image is clicked, the other two will disappear
-    $(".image").click(function() {
+    // when a specific image is clicked, the other two will disappear
+    $("#paper").click(function() {
 
-    $("#paper").append("#player");
-    $("rock, scissors").hide();
-
-
-  $(".image").click(function() {
-
-      $("#rock").append("#player");
-      $("scissors, paper").hide();
+        $("#paper").load("#firstBox");
+        $("#rock, #scissors").hide().attr();
+        // console.log("somthing was clicked" + $(this).attr("data-choice"));
 
 
-  $(".image").click(function() {
+        $("#rock").click(function() {
 
-      $("#scissors").append("#player");
-      $("rock, paper").hide();
+            $("#rock").load("#firstBox");
+            $("#scissors, #paper").hide().attr();
 
+
+        $("#scissors").click(function() {
+
+            $("#scissors").load("#firstBox");
+            $("#rock, #paper").hide().attr();
+
+            });
+        });
     });
-  });
+    // if/else if for when an image is picked,
+    // and adds a tie, loss, or win for any option chosen
+    var rockIsPicked = function() {
 
-  //if/else if for when an image is picked,
-  //and adds a tie, loss, or win for any option chosen
-    var rockIsPicked = function(){
-
-      if (rock == rock){
-        tie++
-      }else if(rock == paper){
-        loss++
-      }else if(rock == scissors){
-        win++
-      }
+        if (rock == rock) {
+            tie++
+        } else if (rock == paper) {
+            loss++
+        } else if (rock == scissors) {
+            win++
+        }
     };
 
-    var paperIsPicked = function(){
+    var paperIsPicked = function() {
 
-      if (paper == paper){
-        tie++
-      }else if(paper == scissors){
-        loss++
-      }else if(paper == rock){
-        win++
-      }
+        if (paper == paper) {
+            tie++
+        } else if (paper == scissors) {
+            loss++
+        } else if (paper == rock) {
+            win++
+        }
     };
 
-    var scissorsIsPicked = function(){
+    var scissorsIsPicked = function() {
 
-      if (scissors == scissors){
-        tie++
-      }else if(scissors == rock){
-        loss++
-      }else if(scissors == paper){
-        win++
-      }
-    }; return false;
+        if (scissors == scissors) {
+            tie++
+        } else if (scissors == rock) {
+            loss++
+        } else if (scissors == paper) {
+            win++
+        }
+    return false;
 
-  });
+};
 
 
-    $("#player").on("click", function() {
+$("#player").on("click", function() {
 
-      var scissors = $('#scissors').val().trim(); 
-      var rock = $('#rock').val().trim(); 
-      var paper = $('#paper').val().trim(); 
+    var scissors = $('#scissors').val().trim();
+    var rock = $('#rock').val().trim();
+    var paper = $('#paper').val().trim();
 
-      console.log(scissors)
-      console.log(rock)
-      console.log(paper)
+    // console.log(scissors)
+    // console.log(rock)
+    // console.log(paper)
 
     $("#firstBox").empty();
 
-      // $("#firstBox").append("<h1>" + name);
-      // $("#firstBox").append("<h4>" + email);
-      // $("#firstBox").append("<h4>" + age);
+    // $("#firstBox").append("<h1>" + name);
+    // $("#firstBox").append("<h4>" + email);
+    // $("#firstBox").append("<h4>" + age);
 
 
-      localStorage.setItem("scissors", scissors);
-      localStorage.setItem("rock", rock);
-      localStorage.setItem("paper", paper);
+    localStorage.setItem("scissors", scissors);
+    localStorage.setItem("rock", rock);
+    localStorage.setItem("paper", paper);
 
-      return false;
-    });
+    return false;
+});
 
 
-    var restartGame = function(inputEndGame) {
+var restartGame = function(inputEndGame) {
 
     var restart = $('<button>Restart</button>').click(function() {
-      location.reload();
+        location.reload();
     });
     var gameState = $("<div>").text(inputEndGame);
-      $("body").append(gameState);
-      $("body").append(restart);
-    };
+    $("body").append(gameState);
+    $("body").append(restart);
+};
 
 });

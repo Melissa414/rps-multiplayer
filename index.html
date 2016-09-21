@@ -37,17 +37,15 @@
                             <div id="player">
                                 <div id="firstBox">
                                     <p>Player One</p>
-                                    <class id="images">
-                                    <div id="scissors">
-                                        <button><img src="images/scissors.png" alt="scissors" id="image" style="width:128px;height:195px;"></button>
-                                    </div>
-                                    <div id="rock">
-                                        <button><img src="images/rock.png" alt="rock" id="image" style="width:128px;height:195px;"></button>
-                                    </div>
-                                    <div id="paper">
-                                        <button><img src="images/paper.png" alt="paper" id="image" style="width:128px;height:195px;"></button>
-                                    </div>
-                                    </class>
+                                        <div id="scissors" >
+                                            <button><img src="images/scissors.png" data-choice="scissors" data-rel="scissors" id="scissors" style="width:128px;height:195px" class="images"></button>
+                                        </div>
+                                        <div id="rock">
+                                            <button><img src="images/rock.png" data-rel="rock" id="rock" style="width:128px;height:195px"  class="images"></button>
+                                        </div>
+                                        <div id="paper">
+                                            <button><img src="images/paper.png" data-rel="paper" id="paper" style="width:128px;height:195px"  class="images"></button>
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +70,7 @@
                                 <h3>Loss: </h3><span id="loss"> 0 </span></div>
                             <div>
                                 <h3>Tie: </h3><span id="tie"> 0 </span></div>
-                                <button type="restartGame" id="restartGame">Restart Game</button>
+                            <button type="restartGame" id="restartGame">Restart Game</button>
                         </div>
                     </div>
                 </div>
